@@ -1,33 +1,66 @@
+/* Universal Res/et and Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333333;
+}
+
+/* Header & Navigation Layout */
+header {
+    background-color: #023047;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px; /* Outer spacing between links */
+    padding: 5px 10px; /* Inner click target padding */
+}
+
+nav a.active {
+    border-bottom: 3px solid #ffb703; /* Adds visual bottom indicator border */
+}
+
+/* Main Content Box Layout */
 main {
-    max-width: 840px;
+    max-width: 900px;
+    margin: 40px auto; /* Centers the whole page container layout horizontally */
+    padding: 20px;      /* Prevents content from hitting screen walls */
 }
 
-aside {
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0 / o.2); /* 1 */
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
-    text-align: center;
-
+.hero-container {
+    background-color: #219ebc;
+    color: #ffffff;
+    padding: 40px;      /* Generates inner space around banner text */
+    margin-bottom: 30px;/* Pushes down the next structural block element */
+    border-radius: 8px;
 }
 
-aside img {
-    width: 200px;
-    height: auto;
+/* Section Box Formatting */
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 6px solid #023047; /* Thick left highlight border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-main img {
-  width: 150px;
-  height: auto;
-  
-}
-
-p {padding: 0;}
-
+/* Footer Box Layout */
 footer {
-    margin-top: 15px;
-    border-top: 1px solid #000;
+    background-color: #023047;
+    color: #ffffff;
     text-align: center;
+    padding: 20px;
+    margin-top: 40px; /* Generates breathing space above footer */
 }
