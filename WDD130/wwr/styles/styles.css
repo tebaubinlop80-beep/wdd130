@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333333;
+}
+
+/* ==========================================================================
+   WEEK 4 ENHANCEMENT: HEADER & NAVIGATION GRID/FLEX
+   ========================================================================== */
+header {
+    background-color: #023047;
+    padding: 20px;
+    
+    /* 1. Use CSS Grid for the top-level header layout */
+    display: grid;
+    grid-template-columns: auto 1fr; /* Logo fits naturally, links fill the rest */
+    align-items: center;
+}
+
+.logo-box {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav {
+    /* 2. Use Flexbox to align items cleanly horizontally */
+    display: flex;
+    justify-content: flex-end; 
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px; /* Outer spacing between links */
+    padding: 5px 10px; /* Inner click target padding */
+    transition: color 0.3s ease;
+}
+
+nav a.active {
+    border-bottom: 3px solid #ffb703; /* Adds visual bottom indicator border */
+}
+
+nav a:hover {
+    color: #ffb703;
+}
+
+/* Main Content Box Layout */
+main {
+    max-width: 900px;
+    margin: 40px auto; /* Centers the whole page container layout horizontally */
+    padding: 20px;      /* Prevents content from hitting screen walls */
+}
+
+/* Hero Section Enhancements */
+.hero-container {
+    background-color: #219ebc;
+    color: #ffffff;
+    padding: 40px;      /* Generates inner space around banner text */
+    margin-bottom: 30px;/* Pushes down the next structural block element */
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.mission {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Section Box Formatting */
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 6px solid #023047; /* Thick left highlight border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   WEEK 4 ENHANCEMENT: CULTURAL GUIDES SIDE-BY-SIDE GRID
+   ========================================================================== */
+.guide-card {
+    /* 3. Establishes a 2-column grid tracking system for image and bio */
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 25px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.guide-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.guide-info h3 {
+    margin-bottom: 10px;
+    color: #023047;
+}
+
+/* Footer Box Layout */
+footer {
+    background-color: #023047;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px; /* Generates breathing space above footer */
+}
