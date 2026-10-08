@@ -1,0 +1,182 @@
+/* ---------- Base ---------- */
+:root {
+  --dark-blue: #0b3c5d;
+  --mid-blue: #1d6fa3;
+  --light-bg: #eef5fa;
+  --text: #1a1a1a;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  color: var(--dark-blue);
+}
+
+/* ---------- Header (grid) + Nav (flex) ---------- */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--dark-blue);
+}
+
+header img {
+  width: 120px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a:focus,
+nav a.current {
+  border-bottom-color: var(--white);
+}
+
+/* ---------- History ---------- */
+.history-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border-radius: 8px;
+}
+
+/* alternate image side on the second item */
+.history-item:nth-of-type(even) {
+  grid-template-columns: 2fr 1fr;
+}
+
+.history-item:nth-of-type(even) img {
+  order: 2;
+}
+
+.history-item img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* ---------- Adventures ---------- */
+.figure-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.figure-row figure {
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+}
+
+.figure-row img {
+  width: 100%;
+  border-radius: 6px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+figcaption {
+  text-align: center;
+  font-weight: bold;
+  color: var(--dark-blue);
+  margin-top: 0.5rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+footer p {
+  margin: 0;
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social img {
+  width: 32px;
+  height: 32px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 700px) {
+  header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .history-item,
+  .history-item:nth-of-type(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .history-item:nth-of-type(even) img {
+    order: 0;
+  }
+
+  .figure-row {
+    flex-wrap: wrap;
+  }
+
+  .figure-row figure {
+    flex: 1 1 45%;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
